@@ -1,6 +1,7 @@
 var log = function() {
     console.log.apply(console, arguments)
 }
+
 var ensure = function(condition, message) {
     if (!condition) {
         console.log(message)

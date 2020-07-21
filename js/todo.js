@@ -82,6 +82,12 @@ var addClickTodo = function() {
             // 获取input的值
             var input = form.children[0]
             var inputValue = input.value
+            
+            // 空值不添加 
+            if(!inputValue) {
+                return
+            }
+
             addTodoList(inputValue, false)
             saveTask()
             input.value = ''
@@ -98,6 +104,11 @@ var addKeydownTodo = function() {
         if (key === 'Enter') {
             log('按到了enter')
             var inputValue = addInput.value
+
+            // 空值不添加 
+            if(!inputValue) {
+                return
+            }
             addTodoList(inputValue, false)
             saveTask()
             addInput.value = ''
@@ -161,7 +172,7 @@ var accomplishTodo2 = function() {
         }
     })
 }
-// 更新todo
+// 入口
 var __main = function() {
     loadTodos()
     addKeydownTodo()
